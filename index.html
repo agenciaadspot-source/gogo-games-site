@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GoGo Games Interactive — Great games. Go further.</title>
+<meta name="description" content="GoGo Games Interactive publishes, distributes and accelerates indie games — and manages the studios behind them. Publishing, porting and partnerships for developers and players.">
+<meta name="theme-color" content="#1488ba">
+<meta name="format-detection" content="telephone=no">
+<!-- online submissions: serverless endpoint (see api/submit.js and README) -->
+<meta name="gogo-form-endpoint" content="/api/submit">
+<!-- SEO: replace SITE_URL with the final domain when publishing (see README) -->
+<link rel="canonical" href="https://www.gogogames.com.br/">
+<link rel="alternate" hreflang="en" href="https://www.gogogames.com.br/?lang=en">
+<link rel="alternate" hreflang="pt-BR" href="https://www.gogogames.com.br/?lang=pt">
+<link rel="alternate" hreflang="x-default" href="https://www.gogogames.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GoGo Games Interactive">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:title" content="GoGo Games Interactive — Great games. Go further.">
+<meta property="og:description" content="GoGo Games Interactive publishes, distributes and accelerates indie games — and manages the studios behind them. Publishing, porting and partnerships for developers and players.">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GoGo Games Interactive — Great games. Go further.">
+<meta name="twitter:description" content="GoGo Games Interactive publishes, distributes and accelerates indie games — and manages the studios behind them. Publishing, porting and partnerships for developers and players.">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preload" href="assets/fonts/Geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/GeistMono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/logo.png" as="image" fetchpriority="high">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.preloader,.gp-canvas,.grain{display:none!important}body.is-loading{overflow:auto}.s-hero{height:auto!important;padding:120px 20px}.hero-title{position:static!important;transform:none!important}</style></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"GoGo Games Interactive","url":"https://www.gogogames.com.br/","logo":"https://www.gogogames.com.br/assets/img/logo.png","email":"gogogamesinteractive@gogogames.com.br","telephone":"+55 62 92359392","sameAs":["https://www.instagram.com/gogogamesinteractive/","https://x.com/GoGointeractive","https://www.twitch.tv/gogogamesinteractive","https://www.youtube.com/@gogogamesinteractive"]}
+</script>
+</head>
+<body class="is-loading" data-theme="blue">
+
+<!-- flag sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="flag-br" viewBox="0 0 20 14"><rect width="20" height="14" rx="1.5" fill="#009b3a"/><path d="M10 2 18 7 10 12 2 7z" fill="#fedf00"/><circle cx="10" cy="7" r="3" fill="#002776"/><path d="M7.2 6.3q2.9-.6 5.7 1.1" stroke="#fff" stroke-width=".5" fill="none"/></symbol>
+  <symbol id="flag-us" viewBox="0 0 20 14"><rect width="20" height="14" rx="1.5" fill="#fff"/><g fill="#b22234"><rect width="20" height="1.08"/><rect y="2.15" width="20" height="1.08"/><rect y="4.31" width="20" height="1.08"/><rect y="6.46" width="20" height="1.08"/><rect y="8.62" width="20" height="1.08"/><rect y="10.77" width="20" height="1.08"/><rect y="12.92" width="20" height="1.08"/></g><rect width="8.6" height="7.6" fill="#3c3b6e"/><g fill="#fff"><circle cx="1.6" cy="1.4" r=".35"/><circle cx="3.6" cy="1.4" r=".35"/><circle cx="5.6" cy="1.4" r=".35"/><circle cx="7.1" cy="1.4" r=".35"/><circle cx="2.6" cy="3.2" r=".35"/><circle cx="4.6" cy="3.2" r=".35"/><circle cx="6.6" cy="3.2" r=".35"/><circle cx="1.6" cy="5" r=".35"/><circle cx="3.6" cy="5" r=".35"/><circle cx="5.6" cy="5" r=".35"/><circle cx="7.1" cy="5" r=".35"/><circle cx="2.6" cy="6.6" r=".35"/><circle cx="4.6" cy="6.6" r=".35"/><circle cx="6.6" cy="6.6" r=".35"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader" aria-hidden="true">
+  <div class="pre-grid"></div>
+  <div class="pre-top mono">
+    <span>GOGO OS 1.0</span><span data-i18n="pre.top">PRESS START · BOOT SEQUENCE</span>
+  </div>
+  <ul class="pre-checks mono">
+    <li data-i18n="pre.c1">Controller connected</li>
+    <li data-i18n="pre.c2">Loading game library</li>
+    <li data-i18n="pre.c3">Syncing publisher partners</li>
+    <li data-i18n="pre.c4">Linking studio network</li>
+    <li data-i18n="pre.c5">Calibrating sticks</li>
+    <li data-i18n="pre.c6">Player 1 ready</li>
+  </ul>
+  <div class="pre-count"><span class="pre-num">000</span><small class="mono">%</small></div>
+  <div class="pre-bar"><i></i></div>
+  <div class="pre-status mono" data-i18n="pre.loading">Loading…</div>
+</div>
+
+<!-- ================= UI GLOBAL ================= -->
+<canvas class="gp-canvas" aria-hidden="true"></canvas>
+<svg class="link-layer" aria-hidden="true"><line class="hero-link" x1="0" y1="0" x2="0" y2="0"/><circle class="hero-link-dot" r="4"/></svg>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"><em class="cursor-label"></em></span></div>
+<div class="scroll-rail" aria-hidden="true"><i></i><span class="mono rail-alt">XP 000</span></div>
+<div class="nav-scrim" aria-hidden="true"></div>
+
+<header class="nav" id="top">
+  <a href="#start" class="brand" data-i18n-attr="aria-label:nav.home" aria-label="GoGo Games Interactive — home">
+    <img src="assets/img/logo.png" width="1600" height="820" alt="GoGo Games Interactive" decoding="async" fetchpriority="high">
+  </a>
+  <nav class="nav-pills" aria-label="Main sections" data-i18n-attr="aria-label:nav.aria">
+    <a href="#start" data-nav="start" class="is-active" data-i18n="nav.start">Start</a>
+    <a href="#games" data-nav="games" data-i18n="nav.games">Games</a>
+    <a href="#services" data-nav="services" data-i18n="nav.services">What we do</a>
+    <a href="#about" data-nav="about" data-i18n="nav.about">About</a>
+    <a href="#partners" data-nav="partners" data-i18n="nav.partners">Partners</a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
+      <button type="button" data-lang="pt" lang="pt-BR" aria-pressed="false" data-i18n-attr="title:lang.pt" title="Português (Brasil)"><svg class="flag" aria-hidden="true"><use href="#flag-br"/></svg><span>PT</span></button>
+      <i aria-hidden="true"></i>
+      <button type="button" data-lang="en" lang="en" aria-pressed="true" class="is-on" data-i18n-attr="title:lang.en" title="English"><svg class="flag" aria-hidden="true"><use href="#flag-us"/></svg><span>EN</span></button>
+    </div>
+    <a href="#submit" class="nav-cta magnetic" data-cursor="submit">
+      <span data-i18n="nav.cta">Submit your game</span><b class="mono">P1</b>
+    </a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mnav" data-i18n-attr="aria-label:nav.menuOpen" aria-label="Open menu"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="mnav" id="mnav" hidden>
+  <nav class="mnav-in" aria-label="Main sections" data-i18n-attr="aria-label:nav.aria">
+    <a href="#start" data-nav="start"><b class="mono">01</b><span data-i18n="nav.start">Start</span></a>
+    <a href="#games" data-nav="games"><b class="mono">02</b><span data-i18n="nav.games">Games</span></a>
+    <a href="#services" data-nav="services"><b class="mono">03</b><span data-i18n="nav.services">What we do</span></a>
+    <a href="#about" data-nav="about"><b class="mono">04</b><span data-i18n="nav.about">About</span></a>
+    <a href="#partners" data-nav="partners"><b class="mono">05</b><span data-i18n="nav.partners">Partners</span></a>
+    <a href="#submit" class="mnav-cta"><b class="mono">P1</b><span data-i18n="nav.cta">Submit your game</span></a>
+  </nav>
+</div>
+
+<main id="main">
+
+<!-- ================= 01 · HERO ================= -->
+<section class="s-hero" id="start" data-section="start" data-theme="blue" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true">
+    <svg class="hero-arcs" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+      <circle cx="120" cy="880" r="300"/><circle cx="120" cy="880" r="430"/><circle cx="120" cy="880" r="560"/><circle cx="120" cy="880" r="690"/><circle cx="120" cy="880" r="820"/>
+    </svg>
+    <svg class="hero-glyphs" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="currentColor" stroke-width="2.2">
+        <circle cx="838" cy="150" r="22"/><path d="M790 220l30 30m0-30l-30 30"/><path d="M880 232l24 40h-48z"/><rect x="922" y="120" width="30" height="30" rx="2"/>
+        <circle cx="96" cy="560" r="14"/><path d="M60 650h40v12H60z"/><path d="M560 74l26 0m-13 -13l0 26"/>
+      </g>
+    </svg>
+    <div class="hero-glow"></div>
+  </div>
+  <canvas class="rain-canvas" aria-hidden="true"></canvas>
+
+  <h1 class="hero-title" id="hero-title" aria-label="Great games. Go further." data-i18n-attr="aria-label:hero.aria">
+    <span class="ht-line"><span class="ht-inner" data-i18n="hero.t1">GREAT</span></span>
+    <span class="ht-line"><span class="ht-inner"><span data-i18n="hero.t2">GAMES</span><em>.</em></span></span>
+    <span class="ht-line"><span class="ht-inner"><span data-i18n="hero.t3">GO FURTHER</span><em>.</em></span></span>
+  </h1>
+
+  <div class="hero-panel glass" data-cursor="select">
+    <div class="panel-head">
+      <span class="panel-title" data-i18n="hero.panel">Select mode</span>
+      <button class="panel-pause" type="button" aria-label="Pause auto-play" data-i18n-attr="aria-label:hero.pause" aria-pressed="false"><i></i><i></i></button>
+    </div>
+    <div class="menu" role="group" aria-label="GoGo Games areas" data-i18n-attr="aria-label:hero.menuAria">
+      <button type="button" aria-pressed="true" class="is-on" data-mode="games"><span class="mn-i mono">01</span><span class="mn-l" data-i18n="hero.mode.games">Games</span><i class="mn-a" aria-hidden="true"></i></button>
+      <button type="button" aria-pressed="false" data-mode="publishing"><span class="mn-i mono">02</span><span class="mn-l" data-i18n="hero.mode.publishing">Publishing</span><i class="mn-a" aria-hidden="true"></i></button>
+      <button type="button" aria-pressed="false" data-mode="porting"><span class="mn-i mono">03</span><span class="mn-l" data-i18n="hero.mode.porting">Porting</span><i class="mn-a" aria-hidden="true"></i></button>
+      <button type="button" aria-pressed="false" data-mode="studios"><span class="mn-i mono">04</span><span class="mn-l" data-i18n="hero.mode.studios">Studios</span><i class="mn-a" aria-hidden="true"></i></button>
+    </div>
+    <p class="menu-desc" aria-live="polite">Our catalog of indie games, published by GoGo Games Interactive.</p>
+    <div class="menu-meter mono" aria-hidden="true"><span>Auto-play</span><div class="mm-bar"><i></i></div><b class="mm-val">01/04</b></div>
+  </div>
+
+  <div class="hero-stat">
+    <div class="stat-pill"><span class="stat-num">12</span><small class="stat-suf"></small></div>
+    <p class="mono stat-label">Titles in<br>the catalog</p>
+  </div>
+
+  <div class="hero-brand">
+    <p class="hb-lead" data-i18n="hero.lead">Your game deserves to go further.</p>
+    <p class="hb-copy" data-i18n="hero.copy">Publishing, distribution, porting and long-term partnerships for independent game studios.</p>
+    <div class="hb-cta">
+      <a href="#games" class="btn btn--solid magnetic" data-cursor="play"><span data-i18n="hero.btn1">Explore our games</span><i aria-hidden="true">→</i></a>
+      <a href="#submit" class="btn btn--line magnetic" data-cursor="join"><span data-i18n="hero.btn2">Partner with us</span><i aria-hidden="true">→</i></a>
+    </div>
+  </div>
+
+  <div class="hero-m-spacer" aria-hidden="true"></div>
+
+  <aside class="hero-card" aria-label="Game preview" data-i18n-attr="aria-label:hero.preview">
+    <div class="hc-frame">
+      <a class="hc-link" href="#games" data-cursor="view" tabindex="-1" aria-hidden="true">
+        <img class="hc-img" src="assets/img/cyber-war.webp" width="900" height="900" alt="" decoding="async">
+      </a>
+      <span class="hc-corner"></span>
+      <span class="hc-tag mono"><span data-i18n="hero.previewTag">▶ PREVIEW</span> <b class="hc-idx">01/08</b></span>
+    </div>
+    <svg class="barcode" data-barcode="GOGO-0001" aria-hidden="true"></svg>
+    <div class="hc-info">
+      <p class="hc-title"><strong class="hc-name">Cyber War: Neon City</strong></p>
+      <p class="hc-links mono"><a class="hc-trailer" href="#games">Trailer ↗</a><a class="hc-find" href="#games">Steam ↗</a></p>
+    </div>
+  </aside>
+
+  <div class="hero-hint mono" aria-hidden="true">
+    <span class="hint-click" data-i18n="hero.hintClick">Click for a stunt</span>
+    <span class="hint-scroll"><span data-i18n="hero.hintScroll">Scroll to start</span> <i></i></span>
+  </div>
+</section>
+
+<!-- ================= 02 · OUR GAMES ================= -->
+<section class="s-games" id="games" data-section="games" data-theme="dark" aria-labelledby="games-h2">
+  <h2 class="sr-only" id="games-h2" data-i18n="games.h2">Our games</h2>
+
+  <!-- desktop: pinned reel -->
+  <div class="gs-stage">
+    <div class="gs-pre" aria-hidden="true">
+      <div class="fp-top mono"><span data-i18n="games.top">GOGO OS · GAME SELECT</span><span class="fp-blink" data-i18n="games.loading">● LOADING</span></div>
+      <p class="fp-big"><span data-i18n="games.big1">press</span><span data-i18n="games.big2">start.</span></p>
+      <div class="fp-bottom mono"><span data-i18n="games.bottom">OUR GAMES · 08 PUBLISHED · 04 PORTED</span><span data-i18n="games.p1">PLAYER 1 READY</span></div>
+    </div>
+
+    <div class="gs-view">
+      <div class="gs-bg" aria-hidden="true"></div>
+      <div class="gs-vignette"></div>
+      <div class="gs-scan" aria-hidden="true"></div>
+
+      <div class="osd mono" aria-hidden="true">
+        <div class="osd-top">
+          <span class="osd-mode" data-i18n="games.select">SELECT</span>
+          <div class="osd-compass"><div class="compass-tape"></div><i></i></div>
+          <span class="osd-rec"><b></b> P1 <em class="osd-tc">00:00:00</em></span>
+        </div>
+        <div class="osd-left">
+          <small data-i18n="games.title">TITLE</small><strong class="osd-idx">01</strong><small class="osd-of">/ 09</small>
+          <div class="osd-ladder"></div>
+        </div>
+        <div class="osd-right">
+          <small data-i18n="games.score">SCORE</small><strong class="osd-score">000000</strong><small data-i18n="games.pts">pts</small>
+          <div class="osd-ladder"></div>
+        </div>
+        <div class="osd-center">
+          <div class="osd-horizon"><i></i><i></i></div>
+          <div class="osd-cross"></div>
+        </div>
+        <div class="osd-bottom">
+          <span><span data-i18n="games.game">GAME</span> <b class="osd-game">01</b>/09</span>
+          <span><span data-i18n="games.lvl">LVL</span> <b class="osd-lvl">01</b></span>
+          <span>GOGO OS 1.0</span>
+          <span class="osd-sig"><i></i><i></i><i></i><i></i></span>
+          <span data-i18n="games.press">PRESS ▶ TO PLAY</span>
+        </div>
+      </div>
+
+      <div class="gs-cards" id="gs-cards"></div>
+      <div class="gs-chapters" id="gs-chapters"></div>
+      <ol class="gs-roster" id="gs-roster" aria-label="Game roster" data-i18n-attr="aria-label:games.roster"></ol>
+      <div class="gs-progress"><i></i></div>
+    </div>
+  </div>
+
+  <!-- mobile: swipe carousel -->
+  <div class="gm" id="gm">
+    <header class="gm-head">
+      <span class="kicker mono" data-i18n="games.kicker">02 — Our games</span>
+      <span class="gm-hint mono" data-i18n="games.swipe">Swipe to browse</span>
+    </header>
+    <ul class="gm-track" id="gm-track" tabindex="0" aria-label="Game roster" data-i18n-attr="aria-label:games.roster"></ul>
+    <div class="gm-ctrl">
+      <button type="button" class="gm-btn" id="gm-prev" aria-label="Previous game" data-i18n-attr="aria-label:games.prev">←</button>
+      <span class="gm-count mono" id="gm-count" aria-live="polite">01 / 09</span>
+      <button type="button" class="gm-btn" id="gm-next" aria-label="Next game" data-i18n-attr="aria-label:games.next">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 · WHAT WE DO ================= -->
+<section class="s-anat" id="services" data-section="services" data-theme="light" aria-labelledby="svc-h2">
+  <div class="anat-stage">
+    <div class="anat-grid" aria-hidden="true"></div>
+    <header class="anat-head">
+      <span class="kicker mono" data-i18n="svc.kicker">03 — What we do</span>
+      <h2 class="split-words" id="svc-h2" data-i18n-html="svc.h2">More than a publisher. <em>A partner.</em></h2>
+      <p class="only-d" data-i18n="svc.p">Scroll to take the controller apart — publishing, porting and studio support, piece by piece.</p>
+      <p class="only-m" data-i18n="svc.pMobile">Publishing, porting and studio support.</p>
+      <img class="svc-m-img only-m" src="assets/img/controller-exploded.webp" width="899" height="778" alt="Exploded view of the GoGo controller showing its internal parts" data-i18n-attr="alt:svc.img" loading="lazy" decoding="async">
+    </header>
+
+    <svg class="anat-lines" aria-hidden="true"></svg>
+
+    <div class="callouts">
+      <article class="callout" data-anchor="bumperL" data-side="left">
+        <svg class="co-ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="14" width="36" height="9" rx="4.5"/><path d="M10 31h28M14 38h20"/></svg>
+        <span class="co-num mono">01</span>
+        <h4 data-i18n="svc.1.h4">Publishing</h4>
+        <strong data-i18n="svc.1.t">Publishing &amp; distribution</strong>
+        <p data-i18n="svc.1.p">We publish indie games and bring them to players on the main platforms, with promotions and the best price in mind.</p>
+      </article>
+      <article class="callout" data-anchor="stickL" data-side="left">
+        <svg class="co-ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="8"/></svg>
+        <span class="co-num mono">02</span>
+        <h4 data-i18n="svc.2.h4">Porting</h4>
+        <strong data-i18n="svc.2.t">Porting service</strong>
+        <p data-i18n="svc.2.p">A dedicated porting service for games from other studios.</p>
+      </article>
+      <article class="callout" data-anchor="dpad" data-side="left">
+        <svg class="co-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M19 6h10v13h13v10H29v13H19V29H6V19h13z"/></svg>
+        <span class="co-num mono">03</span>
+        <h4 data-i18n="svc.3.h4">Studios</h4>
+        <strong data-i18n="svc.3.t">Studio management</strong>
+        <p data-i18n="svc.3.p">We manage studios intelligently, planning how a game can be taken forward over the years.</p>
+      </article>
+      <article class="callout" data-anchor="pcb" data-side="right">
+        <svg class="co-ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="11" y="11" width="26" height="26" rx="3"/><path d="M18 5v6M24 5v6M30 5v6M18 37v6M24 37v6M30 37v6M5 18h6M5 24h6M5 30h6M37 18h6M37 24h6M37 30h6"/></svg>
+        <span class="co-num mono">04</span>
+        <h4 data-i18n="svc.4.h4">IP care</h4>
+        <strong data-i18n="svc.4.t">Intellectual property</strong>
+        <p data-i18n="svc.4.p">We care for IP in a way that strengthens studios, so they don’t lose their greatest asset.</p>
+      </article>
+      <article class="callout" data-anchor="guide" data-side="right">
+        <svg class="co-ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="14" r="2.4"/><circle cx="34" cy="24" r="2.4"/><circle cx="24" cy="34" r="2.4"/><circle cx="14" cy="24" r="2.4"/></svg>
+        <span class="co-num mono">05</span>
+        <h4 data-i18n="svc.5.h4">Players</h4>
+        <strong data-i18n="svc.5.t">Player services ecosystem</strong>
+        <p data-i18n="svc.5.p">Stats, progress and performance across all GoGo games, on all platforms.</p>
+      </article>
+      <article class="callout" data-anchor="face" data-side="right">
+        <svg class="co-ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="10" r="5"/><circle cx="38" cy="24" r="5"/><circle cx="24" cy="38" r="5"/><circle cx="10" cy="24" r="5"/></svg>
+        <span class="co-num mono">06</span>
+        <h4 data-i18n="svc.6.h4">Creators</h4>
+        <strong data-i18n="svc.6.t">Creators Program</strong>
+        <p><span data-i18n="svc.6.p">Content creators can join as partners of GoGo Games Interactive.</span> <a class="co-link" href="https://coda.io/form/Programa-de-criadores-de-conteudo-parceiros-da-GoGo-Games-Intera_dNQqkoU-i7L" target="_blank" rel="noopener" data-i18n="svc.6.link">Join the Creators Program ↗</a></p>
+      </article>
+    </div>
+
+    <div class="anat-foot">
+      <div class="anat-weight"><span class="aw-num">12</span><span class="aw-unit" data-i18n="svc.unit">titles</span><small class="mono" data-i18n="svc.small">In our catalog today</small></div>
+      <div class="anat-meter mono" aria-hidden="true"><span data-i18n="svc.meter">Exploded view</span><div class="am-bar"><i></i></div><b class="am-val">0%</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 · PORTING ================= -->
+<section class="s-gal" id="porting" data-section="services" data-theme="blue" aria-labelledby="port-h2">
+  <div class="gal-stage">
+    <div class="gal-track">
+      <div class="gal-intro">
+        <span class="kicker mono" data-i18n="port.kicker">04 — Porting service</span>
+        <h2 class="split-words" id="port-h2" data-i18n-html="port.h2">Games from other studios. <em>On more screens.</em></h2>
+        <p data-i18n="port.p">Beyond our own publishing, GoGo Games Interactive offers a porting service for other games. These are some of the titles in that line-up.</p>
+        <span class="gal-hint mono only-d" data-i18n="port.hint">Keep scrolling →</span>
+        <span class="gal-hint mono only-m" data-i18n="port.hintSwipe">Swipe →</span>
+      </div>
+
+      <figure class="gal-card" data-cursor="view">
+        <a class="gc-img" href="https://store.steampowered.com/app/1465550/" data-game="one-lonely-outpost" target="_blank" rel="noopener" aria-label="One Lonely Outpost"><img src="assets/img/one-lonely-outpost.webp" width="900" height="506" alt="One Lonely Outpost" loading="lazy" decoding="async"></a>
+        <figcaption><span class="gc-n mono">01</span><strong>One Lonely Outpost</strong><span class="mono gc-links"><a data-steam="one-lonely-outpost" target="_blank" rel="noopener" href="https://store.steampowered.com/app/1465550/" data-i18n="link.steamLong">Trailer &amp; Steam page</a></span></figcaption>
+      </figure>
+      <figure class="gal-card gal-card--tall" data-cursor="view">
+        <a class="gc-img" href="https://store.steampowered.com/app/2081090/" data-game="four-elements" target="_blank" rel="noopener" aria-label="4 The Elements"><img src="assets/img/four-elements.webp" width="900" height="900" alt="4 The Elements" loading="lazy" decoding="async"></a>
+        <figcaption><span class="gc-n mono">02</span><strong>4 The Elements</strong><span class="mono gc-links"><a data-steam="four-elements" target="_blank" rel="noopener" href="https://store.steampowered.com/app/2081090/" data-i18n="link.steamLong">Trailer &amp; Steam page</a></span></figcaption>
+      </figure>
+      <figure class="gal-card" data-cursor="view">
+        <a class="gc-img" href="https://store.steampowered.com/app/2784470/" data-game="nine-kings" target="_blank" rel="noopener" aria-label="9 Kings"><img src="assets/img/nine-kings.webp" width="900" height="900" alt="9 Kings" loading="lazy" decoding="async"></a>
+        <figcaption><span class="gc-n mono">03</span><strong>9 Kings</strong><span class="mono gc-links"><a data-steam="nine-kings" target="_blank" rel="noopener" href="https://store.steampowered.com/app/2784470/" data-i18n="link.steamLong">Trailer &amp; Steam page</a></span></figcaption>
+      </figure>
+      <figure class="gal-card gal-card--tall" data-cursor="view">
+        <a class="gc-img" href="https://store.steampowered.com/app/1983620/" data-game="infinitevania" target="_blank" rel="noopener" aria-label="Infinitevania"><img src="assets/img/infinitevania.webp" width="900" height="900" alt="Infinitevania" loading="lazy" decoding="async"></a>
+        <figcaption><span class="gc-n mono">04</span><strong>Infinitevania</strong><span class="mono gc-links"><a data-steam="infinitevania" target="_blank" rel="noopener" href="https://store.steampowered.com/app/1983620/" data-i18n="link.steamLong">Trailer &amp; Steam page</a></span></figcaption>
+      </figure>
+
+      <div class="gal-quotes">
+        <div class="gq-score"><b>04</b><span class="gq-lbl" data-i18n="port.count">ported titles</span><small class="mono" data-i18n="port.small">Porting service for other games</small></div>
+        <p class="gq-copy" data-i18n="port.copy">Have a finished game that should be on more platforms? Tell us about it — we’ll take it from there.</p>
+        <a class="btn btn--solid btn--lg magnetic" href="mailto:gogogamesinteractive@gogogames.com.br?subject=Porting%20request" id="port-mail" data-cursor="talk"><span data-i18n="port.btn">Ask about porting</span><i aria-hidden="true">→</i></a>
+      </div>
+    </div>
+
+    <div class="flightline" aria-hidden="true">
+      <span class="mono fl-l" data-i18n="port.queue">PORT QUEUE</span>
+      <div class="fl-track"><i class="fl-fill"></i></div>
+      <span class="mono fl-r">01 / 04</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 · ABOUT ================= -->
+<section class="s-sense" id="about" data-section="about" data-theme="dark" aria-labelledby="about-h2">
+  <div class="sense-stage">
+    <canvas class="sense-canvas" aria-hidden="true"></canvas>
+    <header class="sense-head">
+      <span class="kicker mono" data-i18n="about.kicker">05 — About GoGo Games</span>
+      <h2 class="split-words" id="about-h2" data-i18n-html="about.h2">A new era for <em>gamers &amp; developers.</em></h2>
+      <p data-i18n="about.p">We are a games company that doesn’t only publish games — we intelligently manage studios, thinking about how each game can go further over the years. We take care of intellectual property so studios keep their greatest asset.</p>
+      <p class="sense-mission" data-i18n-html="about.mission"><b>Our mission:</b> to provide unique experiences for gamers and to build lasting partnerships with talented developers. Whether you’re a gamer eager for something new or a studio looking for a strategic partner, we’re here to push your potential to the max.</p>
+      <p class="sense-players"><b data-i18n="about.players">For players</b><span data-i18n="about.playersP">Gamers who want a unique experience with the best indie games — with an ecosystem of player services for all GoGo games on all platforms, bringing the best games at the best price.</span></p>
+    </header>
+
+    <div class="about-m-spacer" aria-hidden="true"></div>
+
+    <div class="sense-readout mono" aria-live="off" aria-hidden="true">
+      <div><small data-i18n="about.dist">Distance</small><b class="sr-dist">—</b></div>
+      <div><small data-i18n="about.status">Status</small><b class="sr-status">IDLE</b></div>
+      <div><small data-i18n="about.dodges">Dodges</small><b class="sr-count">000</b></div>
+    </div>
+
+    <ul class="sense-stats">
+      <li><b data-count="12">12</b><small data-i18n="s1">titles in the catalog</small></li>
+      <li><b data-count="4">4</b><small data-i18n="s2">ported games</small></li>
+      <li><b data-count="2">2</b><small data-i18n="s3">publisher partners</small></li>
+      <li><b data-count="20">20</b><span>+</span><small data-i18n="s4">partner studios</small></li>
+    </ul>
+    <p class="sense-touch mono" aria-hidden="true" data-i18n="about.touch">Tap near the controller to try to catch it</p>
+  </div>
+</section>
+
+<!-- ================= 06 · PARTNERS ================= -->
+<section class="s-partners" id="partners" data-section="partners" data-theme="light" aria-labelledby="pt-h2">
+  <div class="pt-wrap">
+    <header class="pt-head">
+      <span class="kicker mono" data-i18n="pt.kicker">06 — Our partners</span>
+      <h2 class="split-words" id="pt-h2" data-i18n-html="pt.h2">Good company <em>makes good games.</em></h2>
+      <p data-i18n="pt.p">The publishers, platforms and studios we build with.</p>
+    </header>
+
+    <div class="pt-grid">
+      <article class="pt-tile pt-tile--pub" data-cursor="meet">
+        <h3 class="pt-tag mono" data-i18n="pt.t1">01 · Publisher partners</h3>
+        <div class="pt-logos">
+          <img src="assets/img/partner-indieio.webp" width="600" height="200" alt="indie.io" loading="lazy" decoding="async">
+          <img src="assets/img/partner-hooded-horse.webp" width="420" height="200" alt="Hooded Horse" loading="lazy" decoding="async">
+        </div>
+      </article>
+      <article class="pt-tile pt-tile--plat" data-cursor="meet">
+        <h3 class="pt-tag mono" data-i18n="pt.t2">02 · Platforms</h3>
+        <div class="pt-logos">
+          <img src="assets/img/platforms.webp" width="1290" height="925" alt="Xbox, PlayStation, Nintendo Switch, Steam, Xsolla and Nuuvem logos" data-i18n-attr="alt:pt.platAlt" loading="lazy" decoding="async">
+        </div>
+      </article>
+      <article class="pt-tile pt-tile--stu" data-cursor="meet">
+        <h3 class="pt-tag mono" data-i18n="pt.t3">03 · Studio partners</h3>
+        <p class="pt-swipe mono only-m" data-i18n="pt.swipe">Swipe to see all studios →</p>
+        <div class="pt-scroll" tabindex="0" role="group" aria-label="Partner studios" data-i18n-attr="aria-label:pt.t3">
+          <div class="pt-logos">
+            <img src="assets/img/studios.webp" width="1623" height="805" alt="Partner studios" data-i18n-attr="alt:pt.stuAlt" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 · SUBMIT ================= -->
+<section class="s-buy" id="submit" data-section="submit" data-theme="orange" aria-labelledby="sub-h2">
+  <div class="marquee" aria-hidden="true">
+    <div class="mq-track">
+      <span>Publishing</span><i></i><span>Porting</span><i></i><span>Studio management</span><i></i><span>Player services</span><i></i><span>Creators Program</span><i></i>
+      <span>Publishing</span><i></i><span>Porting</span><i></i><span>Studio management</span><i></i><span>Player services</span><i></i><span>Creators Program</span><i></i>
+    </div>
+  </div>
+
+  <div class="buy-grid">
+    <div class="buy-left">
+      <span class="kicker mono" data-i18n="sub.kicker">07 — Submit your game</span>
+      <h2 class="split-words" id="sub-h2" data-i18n-html="sub.h2">Got a game? Insert it <em>here.</em></h2>
+      <p class="buy-lead" data-i18n="sub.lead">Send us your game or presentation. Pick a skin for the controller while you’re here — the dock is waiting.</p>
+
+      <div class="pad-zone" id="pad" aria-hidden="true">
+        <span class="pz-label pz-label--tl mono" data-i18n="sub.dock">DOCK · PLAYER 1</span>
+        <span class="pz-label pz-label--tr mono pz-status">WAITING</span>
+        <span class="pz-label pz-label--bl mono" data-i18n="sub.brasil">GOGO GAMES INTERACTIVE · BRASIL</span>
+        <img class="pad-img" src="assets/img/controller-front.webp" width="781" height="585" alt="" loading="lazy" decoding="async">
+      </div>
+
+      <div class="swatches" role="radiogroup" aria-label="Controller skin" data-i18n-attr="aria-label:sub.skin">
+        <button type="button" class="sw is-on" role="radio" aria-checked="true" data-color="#14181e" data-name="Graphite"><i style="--c:#14181e"></i><span data-i18n="sub.skin1">Graphite</span></button>
+        <button type="button" class="sw" role="radio" aria-checked="false" data-color="#e9edf1" data-name="Arctic"><i style="--c:#e9edf1"></i><span data-i18n="sub.skin2">Arctic</span></button>
+        <button type="button" class="sw" role="radio" aria-checked="false" data-color="#1b9bd1" data-name="GoGo Blue"><i style="--c:#1b9bd1"></i><span data-i18n="sub.skin3">GoGo Blue</span></button>
+        <button type="button" class="sw" role="radio" aria-checked="false" data-color="#ec5a1a" data-name="GoGo Orange"><i style="--c:#ec5a1a"></i><span data-i18n="sub.skin4">GoGo Orange</span></button>
+      </div>
+    </div>
+
+    <div class="buy-right">
+      <div class="br-head">
+        <span class="br-badge mono" data-i18n="sub.badge">Developers · Open submissions</span>
+        <h3 data-i18n="sub.h3">Send us your game</h3>
+      </div>
+
+      <form class="submit-form" id="submit-form" novalidate>
+        <fieldset class="kits" role="radiogroup">
+          <legend class="sr-only" data-i18n="sub.need">What are you looking for?</legend>
+          <button type="button" class="kit is-on" role="radio" aria-checked="true" data-need="Publishing" data-need-i18n="sub.k1">
+            <span class="kit-top"><strong data-i18n="sub.k1">Publishing</strong><b class="mono">01</b></span>
+            <small data-i18n="sub.k1p">Publishing and distribution for your game</small>
+          </button>
+          <button type="button" class="kit" role="radio" aria-checked="false" data-need="Porting" data-need-i18n="sub.k2">
+            <span class="kit-top"><strong data-i18n="sub.k2">Porting</strong><b class="mono">02</b></span>
+            <small data-i18n="sub.k2p">Bring a finished game to more platforms</small>
+          </button>
+          <button type="button" class="kit" role="radio" aria-checked="false" data-need="Studio partnership" data-need-i18n="sub.k3">
+            <span class="kit-top"><strong data-i18n="sub.k3">Studio partnership</strong><b class="mono">03</b></span>
+            <small data-i18n="sub.k3p">Long-term partnership and studio management</small>
+          </button>
+        </fieldset>
+
+        <div class="fields">
+          <div class="field"><label for="f-studio" class="mono" data-i18n="sub.f.studio">Studio / your name</label><input id="f-studio" type="text" name="studio" autocomplete="organization" required maxlength="120" aria-describedby="e-studio" data-i18n-attr="placeholder:sub.f.studioPh" placeholder="Your studio"><small class="err" id="e-studio" aria-live="polite"></small></div>
+          <div class="field"><label for="f-game" class="mono" data-i18n="sub.f.game">Game title</label><input id="f-game" type="text" name="game" required maxlength="120" aria-describedby="e-game" data-i18n-attr="placeholder:sub.f.gamePh" placeholder="Your game"><small class="err" id="e-game" aria-live="polite"></small></div>
+          <div class="field"><label for="f-email" class="mono" data-i18n="sub.f.email">Email</label><input id="f-email" type="email" name="email" autocomplete="email" inputmode="email" required maxlength="160" aria-describedby="e-email" data-i18n-attr="placeholder:sub.f.emailPh" placeholder="you@studio.com"><small class="err" id="e-email" aria-live="polite"></small></div>
+          <div class="field"><label for="f-link" class="mono" data-i18n="sub.f.link">Link to build, trailer or presentation</label><input id="f-link" type="url" name="link" inputmode="url" maxlength="300" aria-describedby="e-link" placeholder="https://"><small class="err" id="e-link" aria-live="polite"></small></div>
+          <div class="field field--wide"><label for="f-msg" class="mono" data-i18n="sub.f.msg">Tell us about it</label><textarea id="f-msg" name="msg" rows="3" maxlength="2000" data-i18n-attr="placeholder:sub.f.msgPh" placeholder="Genre, platforms, status, team…"></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" type="text" name="website" tabindex="-1" autocomplete="off"></div>
+        </div>
+
+        <button type="submit" class="buy-cta magnetic" id="submit-btn" data-cursor="send">
+          <span class="cta-label" data-i18n="sub.send">Send my game</span>
+          <span class="cta-sub mono"><span class="cta-kit">Publishing</span> · <span data-i18n="sub.sub">We reply by email</span></span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </button>
+        <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+      </form>
+
+      <ul class="trust">
+        <li><b data-i18n="sub.c.email">Email</b><a href="mailto:gogogamesinteractive@gogogames.com.br">gogogamesinteractive@<wbr>gogogames.com.br</a></li>
+        <li><b data-i18n="sub.c.phone">Phone</b><a href="tel:+556292359392">+55 62 9235-9392</a></li>
+        <li><b data-i18n="sub.c.creators">Creators</b><a href="https://coda.io/form/Programa-de-criadores-de-conteudo-parceiros-da-GoGo-Games-Intera_dNQqkoU-i7L" target="_blank" rel="noopener" data-i18n="sub.c.creatorsLink">Creators Program form ↗</a></li>
+        <li><b data-i18n="sub.c.store">Store</b><a href="https://gogogames.com.br/" target="_blank" rel="noopener">gogogames.com.br ↗</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" id="contact" data-section="contact" data-theme="dark">
+  <div class="ft-top">
+    <p class="ft-line"><span class="ft-l1" data-i18n="ft.line1">Great games.</span><br><span data-i18n="ft.line2">Go further.</span></p>
+    <a href="#submit" class="ft-cta magnetic" data-cursor="submit" data-i18n="ft.cta">Send us your game →</a>
+  </div>
+
+  <div class="ft-contact">
+    <div>
+      <small class="mono" data-i18n="ft.contact">Contact</small>
+      <a href="mailto:gogogamesinteractive@gogogames.com.br">gogogamesinteractive@gogogames.com.br</a>
+      <a href="tel:+556292359392">+55 62 9235-9392</a>
+    </div>
+    <div>
+      <small class="mono" data-i18n="ft.follow">Follow</small>
+      <a href="https://www.instagram.com/gogogamesinteractive/" target="_blank" rel="noopener">Instagram ↗</a>
+      <a href="https://x.com/GoGointeractive" target="_blank" rel="noopener">X / Twitter ↗</a>
+      <a href="https://www.twitch.tv/gogogamesinteractive" target="_blank" rel="noopener">Twitch ↗</a>
+      <a href="https://www.youtube.com/@gogogamesinteractive" target="_blank" rel="noopener">YouTube ↗</a>
+    </div>
+    <div>
+      <small class="mono" data-i18n="ft.explore">Explore</small>
+      <a href="https://gogogames.com.br/" target="_blank" rel="noopener" data-i18n="ft.store">Official store ↗</a>
+      <a href="https://coda.io/form/Programa-de-criadores-de-conteudo-parceiros-da-GoGo-Games-Intera_dNQqkoU-i7L" target="_blank" rel="noopener" data-i18n="ft.creators">Creators Program ↗</a>
+      <button type="button" class="ft-direct" data-video="m-R8vVGluEw" data-i18n="ft.direct">GoGo Direct · 1st edition ▶</button>
+    </div>
+  </div>
+
+  <div class="ft-word" aria-hidden="true"><span>G</span><span>O</span><span>G</span><span>O</span></div>
+  <div class="ft-bottom mono">
+    <span data-i18n="ft.rights">© 2026 GoGo Games Interactive</span>
+    <span data-i18n="ft.tag">Games · Publishing · Porting · Studios</span>
+    <a href="#start" class="ft-top-link" data-i18n="ft.top">Back to top ↑</a>
+  </div>
+</footer>
+
+<!-- video modal -->
+<div class="vmodal" id="vmodal" role="dialog" aria-modal="true" aria-label="GoGo Direct" hidden>
+  <button class="vm-close" type="button" aria-label="Close video" data-i18n-attr="aria-label:vm.close">✕</button>
+  <div class="vm-frame"></div>
+</div>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
