@@ -6,11 +6,11 @@ Site institucional premium (3D controller, scroll cinematográfico, PT/EN). Est�
 
 ```bash
 npm install          # só para recompilar o JS
-npm run build        # gera assets/app.js (three + gsap + lenis + código do site)
-python3 -m http.server 4173   # visualização local (o formulário só funciona na Vercel)
+npm run build        # gera public/assets/app.js (three + gsap + lenis + código do site)
+python3 -m http.server 4173 --directory public   # visualização local (o formulário só funciona na Vercel)
 ```
 
-**Vercel:** `vercel` dentro da pasta (Framework: *Other*, sem build command, output `.`). O `assets/app.js` já está compilado.
+**Vercel:** `vercel` dentro da pasta (Framework: *Other*, sem build command; o site estático fica em `public/`, que já é o diretório padrão). O `public/assets/app.js` já está compilado.
 `vercel.json` define cache imutável em `/assets/*` e headers de segurança. A pasta `api/` vira a função `/api/submit` automaticamente.
 
 ## O que depende de configuração externa
@@ -56,14 +56,14 @@ Todos os textos ficam em **`src/i18n.js`** (`en` e `pt` lado a lado). Para edita
 
 | Caminho | O que é |
 |---|---|
-| `index.html` | Estrutura/semântica (textos via `data-i18n`) |
-| `styles.css` | Design system, desktop e layout mobile dedicado |
+| `public/index.html` | Estrutura/semântica (textos via `data-i18n`) |
+| `public/styles.css` | Design system, desktop e layout mobile dedicado |
 | `src/i18n.js` | Dicionários PT/EN + utilitários |
 | `src/data.js` | Catálogo oficial e IDs verificados da Steam |
 | `src/controller.js` | Controle 3D procedural (Three.js) |
 | `src/main.js` | Scroll, câmera 3D, HUD, menu mobile, formulário |
 | `api/submit.js` | Função serverless do formulário |
-| `assets/` | Logo PNG transparente, capas, parceiros, fontes (WebP otimizado) |
+| `public/assets/` | Logo PNG transparente, capas, parceiros, fontes (WebP otimizado) |
 
 ## Comportamento por tela
 

@@ -5,7 +5,7 @@ await build({
   minify: true,
   format: 'iife',
   target: ['es2020'],
-  outfile: 'assets/app.js',
+  outfile: 'public/assets/app.js',
   legalComments: 'none',
   logLevel: 'info',
 });
